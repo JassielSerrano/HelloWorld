@@ -1,20 +1,12 @@
-# keep track of students in a class
-# student's name
-# age
-# gather all student's names
-# count how many students in class
-student_1 = {"age": 18, "name": "George"}
-student_2 = {"age": 17, "name": "Matt"}
+import random
 
-lesson_1_students = [student_1, student_2]
+def rolldice(min,max):
+    while True:
+        print("Rolling dice...")
+        print(f"Your number : {random.randint(min,max)}")
+        choice = input("Do you want to roll the dice again? (y/n)")
+        if choice.lower() == 'n':
+            break
 
-lesson_1 = {"name": "data structures",
-            "students": lesson_1_students}
 
-def number_of_students(lesson):
-    return len(lesson['students'])
-
-# iteration using for loops in python
-def student_names(lesson):
-    for student in lesson['students']:
-        print(student['name'])
+rolldice(1,6)
