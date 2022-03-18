@@ -1,17 +1,17 @@
-import random
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
+    def get_name(self):
+        return self.name
 
-def rolldice(min, max, limit):
-    for e in range(5):
-        print("Rolling dice...")
-        print(f"Your number : {random.randint(min,max)}")
-        choice = input("Do you want to roll the dice again? (y/n)")
-        if choice.lower() == 'n':
-            quit()
-        if choice.lower() != 'y':
-            print("Not(y/n)")
-            quit()
-            #raise Exception
+    def get_age(self):
+        return self.age
 
-rolldice(1, 6, 5)
-print('finsihed successfully')
+    def grow_older(self):
+        return self.age + 1
+
+p = Person("Rain", 19)
+print(p.grow_older())
+print(type(p))
