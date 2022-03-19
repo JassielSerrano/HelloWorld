@@ -12,6 +12,10 @@ class Person:
     def grow_older(self):
         return self.age + 1
 
-p = Person("Rain", 19)
-print(p.grow_older())
-print(type(p))
+p1 = Person("Rain", 19)
+print(p1.grow_older())
+print(type(p1))
+p2= Person("jay", 39)
+print(p2.grow_older())
+print(type(p2))
+#hi
