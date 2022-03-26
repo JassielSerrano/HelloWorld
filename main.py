@@ -1,5 +1,11 @@
 import random
 
+class Dice:
+    def __init__(self, sides):
+        self.sides = sides
+
+    def roll(self):
+        return random.randint(1, self.sides)
 
 class Player:
     def __init__(self, name, age):
@@ -15,26 +21,17 @@ class Player:
     def grow_older(self):
         self.age = self.age + 1
 
-    def roll_dice(self, min, max, limit):
-        for e in range(5):
-            print("Rolling dice...")
-            print(f"Your number : {random.randint(min, max)}")
-            choice = input("Do you want to roll the dice again? (y/n)")
-            if choice.lower() == 'n':
-                quit()
-            if choice.lower() != 'y':
-                print("Not(y/n)")
-                quit()
-                # raise Exception
+    def roll_dice(self, dice):
+        print(f"Player named {self.name} rolled the dice and got {dice.roll()}")
 
-
+d1 = Dice(6)
 p1 = Player("Rain", 19)
 print("Player 1 :", p1.get_name())
 p1.grow_older()
 p1.grow_older()
 print(p1.get_age(), "years old")
-p1.roll_dice(1, 6, 5)
+p1.roll_dice(d1)
 p2 = Player("Jay", 39)
 print("Player 2:", p2.get_name())
 print(p2.get_age(), "years old")
-p2.roll_dice(1, 6, 5)
+p2.roll_dice(d1)
