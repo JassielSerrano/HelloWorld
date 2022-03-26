@@ -1,3 +1,6 @@
+import random
+
+
 class Player:
     def __init__(self, name, age):
         self.name = name
@@ -11,25 +14,18 @@ class Player:
 
     def grow_older(self):
         self.age = self.age + 1
-    def roll_dice(self):
-        # TODO: move import to top of file
-        import random
-        # TODO: consolidate into single roll_dice function
-        def rolldice(min, max, limit):
-            for e in range(5):
-                print("Rolling dice...")
-                print(f"Your number : {random.randint(min, max)}")
-                # TODO: print the name and age of the person rolling the dice
-                choice = input("Do you want to roll the dice again? (y/n)")
-                if choice.lower() == 'n':
-                    quit()
-                if choice.lower() != 'y':
-                    print("Not(y/n)")
-                    quit()
-                    # raise Exception
 
-        rolldice(1, 6, 5)
-        print('finsihed successfully')
+    def roll_dice(self, min, max, limit):
+        for e in range(5):
+            print("Rolling dice...")
+            print(f"Your number : {random.randint(min, max)}")
+            choice = input("Do you want to roll the dice again? (y/n)")
+            if choice.lower() == 'n':
+                quit()
+            if choice.lower() != 'y':
+                print("Not(y/n)")
+                quit()
+                # raise Exception
 
 
 p1 = Player("Rain", 19)
@@ -37,8 +33,8 @@ print("Player 1 :", p1.get_name())
 p1.grow_older()
 p1.grow_older()
 print(p1.get_age(), "years old")
-p1.roll_dice()
+p1.roll_dice(1, 6, 5)
 p2 = Player("Jay", 39)
 print("Player 2:", p2.get_name())
 print(p2.get_age(), "years old")
-p2.roll_dice()
+p2.roll_dice(1, 6, 5)
