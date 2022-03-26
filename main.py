@@ -13,12 +13,14 @@ class Player:
         self.age = self.age + 1
 
     def roll_dice(self):
+        # TODO: move import to top of file
         import random
-
+        # TODO: consolidate into single roll_dice function
         def rolldice(min, max, limit):
             for e in range(5):
                 print("Rolling dice...")
                 print(f"Your number : {random.randint(min, max)}")
+                # TODO: print the name and age of the person rolling the dice
                 choice = input("Do you want to roll the dice again? (y/n)")
                 if choice.lower() == 'n':
                     quit()
