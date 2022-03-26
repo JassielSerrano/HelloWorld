@@ -11,7 +11,6 @@ class Player:
 
     def grow_older(self):
         self.age = self.age + 1
-
     def roll_dice(self):
         # TODO: move import to top of file
         import random
